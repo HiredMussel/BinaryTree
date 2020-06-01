@@ -5,15 +5,10 @@ class TreeNode
     private $name;
     private $parents;
 
-    public function __construct(string $name, ?TreeNode $mother=NULL, ?TreeNode $father=NULL)
+    public function __construct(string $name, ?TreeNode $mother=null, ?TreeNode $father=null)
     {
         $this->name = $name;
         $this->parents = [$mother, $father];
-    }
-
-    public function getSpouse()
-    {
-        return $this->spouse;
     }
 
     public function getParents()
@@ -25,7 +20,6 @@ class TreeNode
     {
         return $this->name;
     }
-
 }
 
 $granny = new TreeNode('Georgina');
