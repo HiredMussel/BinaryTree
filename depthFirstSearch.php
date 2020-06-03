@@ -6,7 +6,6 @@ function depthFirstSearch(string $needle, FamilyMember $haystack) {
     $toReturn = NULL;
     echo $haystack->getName() . '<br>';
     if ($needle === $haystack->getName()) {
-        var_dump($haystack);
         return $haystack;
     } else {
         foreach($haystack->getParents() as $parent) {

@@ -11,7 +11,7 @@ function breadthFirstSearch(String $needle, FamilyMember $haystack) {
                 return $searchArray[$i];
             } else {
                 foreach($searchArray[$i]->getParents() as $parent) {
-                    $searchArray[] = $parent;
+                    if ($parent) $searchArray[] = $parent;
                 }
             }
         }
