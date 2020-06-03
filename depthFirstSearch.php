@@ -3,17 +3,19 @@
 require_once 'FamilyTree.php';
 
 function depthFirstSearch(string $needle, FamilyMember $haystack) {
+    $toReturn = NULL;
     echo $haystack->getName() . '<br>';
     if ($needle === $haystack->getName()) {
+        var_dump($haystack);
         return $haystack;
     } else {
         foreach($haystack->getParents() as $parent) {
             if ($parent) {
-                depthFirstSearch($needle, $parent);
+                $toReturn = (depthFirstSearch($needle, $parent) ?? $toReturn);
             }
         }
     }
-    return NULL;
+    return $toReturn;
 }
 
-depthFirstSearch('Joe', $me);
+var_dump(depthFirstSearch('Joe', $me));

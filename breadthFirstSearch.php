@@ -15,8 +15,10 @@ function breadthFirstSearch(String $needle, FamilyMember $haystack) {
                 }
             }
         }
+    } else if ($haystack->name === $needle) {
+        return $haystack;
     }
     return NULL;
 }
 
-breadthFirstSearch('Joe', $me);
+var_dump(breadthFirstSearch('Louis', $me));
