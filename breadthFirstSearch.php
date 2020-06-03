@@ -9,7 +9,7 @@ function breadthFirstSearch(String $needle, FamilyMember $haystack) {
         for ($i; $i < count($searchArray); $i++) {
             echo $searchArray[$i]->getName() . '<br>';
             if ($searchArray[$i]->getName() === $needle) {
-                return $searchArray[$i]->getName();
+                return $searchArray[$i];
             } else {
                 foreach($searchArray[$i]->getParents() as $parent) {
                     $searchArray[] = $parent;

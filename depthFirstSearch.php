@@ -5,7 +5,7 @@ require_once 'FamilyTree.php';
 function depthFirstSearch(string $needle, FamilyMember $haystack) {
     echo $haystack->getName() . '<br>';
     if ($needle === $haystack->getName()) {
-        return true;
+        return $haystack;
     } else {
         foreach($haystack->getParents() as $parent) {
             if ($parent) {
@@ -13,7 +13,7 @@ function depthFirstSearch(string $needle, FamilyMember $haystack) {
             }
         }
     }
-    return false;
+    return NULL;
 }
 
 depthFirstSearch('Joe', $me);
