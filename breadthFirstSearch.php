@@ -5,8 +5,7 @@ require_once 'FamilyTree.php';
 function breadthFirstSearch(String $needle, FamilyMember $haystack) {
     $searchArray[] = $haystack;
     if ($haystack->getParents()) {
-        $i = 0;
-        for ($i; $i < count($searchArray); $i++) {
+        for ($i = 0; $i < count($searchArray); $i++) {
             echo $searchArray[$i]->getName() . '<br>';
             if ($searchArray[$i]->getName() === $needle) {
                 return $searchArray[$i];
